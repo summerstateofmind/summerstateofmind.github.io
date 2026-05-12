@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skyler Bissell — AI Product Manager</title>
-    <meta name="description" content="Skyler Bissell is an AI-forward Product Manager based in Seattle, building intelligent products with generative AI.">
+    <title>Skyler Bissell, Product Leader</title>
+    <meta name="description" content="Skyler Bissell is a senior product leader based in Seattle, building intelligent products with generative AI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0a0a0b;
-            --bg-card: #131316;
-            --bg-card-hover: #1a1a1f;
-            --bg-expanded: #16161b;
+            --bg-card: #17171c;
+            --bg-card-hover: #1f1f25;
+            --bg-expanded: #1a1a20;
             --text-primary: #f0efe9;
-            --text-secondary: #8a8a8f;
-            --text-muted: #5a5a5f;
+            --text-secondary: #b0b0b8;
+            --text-muted: #9a9aa0;
             --accent: #c8ff00;
             --accent-dim: rgba(200, 255, 0, 0.08);
             --accent-mid: rgba(200, 255, 0, 0.15);
-            --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(255, 255, 255, 0.12);
+            --border: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(255, 255, 255, 0.18);
             --radius: 16px;
             --radius-sm: 10px;
             --font-display: 'DM Serif Display', serif;
@@ -135,7 +135,7 @@
 
         .hero-eyebrow {
             font-family: var(--font-mono);
-            font-size: 13px;
+            font-size: 14px;
             color: var(--accent);
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -238,8 +238,8 @@
 
         .section-label {
             font-family: var(--font-mono);
-            font-size: 11px;
-            letter-spacing: 2.5px;
+            font-size: 13px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent);
             margin-bottom: 56px;
@@ -280,7 +280,7 @@
 
         .exp-date {
             font-family: var(--font-mono);
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-muted);
             white-space: nowrap;
         }
@@ -295,17 +295,18 @@
 
         .stat-card {
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: var(--radius);
-            padding: 36px 28px;
+            padding: 40px 28px;
             text-align: center;
             opacity: 0;
             transform: translateY(20px);
             transition: border-color var(--transition), background var(--transition);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
         }
 
         .stat-card:hover {
-            border-color: var(--border-hover);
+            border-color: var(--accent-mid);
             background: var(--bg-card-hover);
         }
 
@@ -322,9 +323,9 @@
         }
 
         .stat-label {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--text-secondary);
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.5;
         }
 
@@ -375,7 +376,7 @@
         }
 
         .award-meta {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-muted);
         }
 
@@ -459,7 +460,7 @@
 
         .project-tag {
             font-family: var(--font-mono);
-            font-size: 11px;
+            font-size: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--accent);
@@ -509,8 +510,8 @@
 
         .project-preview {
             padding: 0 28px 24px;
-            font-size: 14px;
-            color: var(--text-muted);
+            font-size: 15px;
+            color: var(--text-secondary);
             line-height: 1.6;
         }
 
@@ -518,6 +519,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
         }
 
         .project-card.expanded .project-expanded {
@@ -538,7 +540,7 @@
 
         .project-detail-section h5 {
             font-family: var(--font-mono);
-            font-size: 11px;
+            font-size: 12px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--accent);
@@ -546,10 +548,10 @@
         }
 
         .project-detail-section p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--text-secondary);
             line-height: 1.7;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .tech-tags {
@@ -793,11 +795,11 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-    <div class="hero-eyebrow">AI Product Manager</div>
+    <div class="hero-eyebrow">Product Leader</div>
     <h1>Hi, I'm Skyler<br>Bissell<em>.</em></h1>
     <p class="hero-subtitle">
-        I build intelligent products with generative AI — from concept through launch. 
-        8 years shipping SaaS, iOS, and eCommerce. 3 years deep in AI.
+        I build intelligent products with generative AI, from concept through launch.
+        8 years shipping SaaS, iOS, and eCommerce. 4 years deeply exploring AI.
     </p>
     <div class="hero-meta">
         <div class="hero-meta-item">
@@ -865,7 +867,7 @@
             <div class="stat-label">Years building SaaS, iOS,<br>and eCommerce products</div>
         </div>
         <div class="stat-card anim">
-            <div class="stat-number">3</div>
+            <div class="stat-number">4</div>
             <div class="stat-label">Years of hands-on AI<br>product experience</div>
         </div>
         <div class="stat-card anim">
@@ -877,17 +879,15 @@
         <div class="award-card anim">
             <div class="award-icon">🥇</div>
             <div class="award-info">
-                <h4>1st Place — AI Hackathon</h4>
+                <h4>1st Place, AI Hackathon</h4>
                 <div class="award-meta">ScamDetect · June 2023</div>
             </div>
         </div>
         <div class="award-card anim">
-            <div class="award-card anim">
-                <div class="award-icon">🥉</div>
-                <div class="award-info">
-                    <h4>3rd Place — AI Hackathon</h4>
-                    <div class="award-meta">DoppelFlow · December 2023</div>
-                </div>
+            <div class="award-icon">🥉</div>
+            <div class="award-info">
+                <h4>3rd Place, AI Hackathon</h4>
+                <div class="award-meta">DoppelFlow · December 2023</div>
             </div>
         </div>
     </div>
@@ -901,13 +901,13 @@
         <!-- resuumi -->
         <div class="project-card anim" data-project="resuumi">
             <img class="project-thumb" src="Work%20Projects/resuumi/resuumi%20homepage.png" alt="resuumi homepage screenshot" loading="lazy">
-            <div class="project-header" onclick="toggleProject(this)">
+            <div class="project-header">
                 <div>
                     <div class="project-tag">Production</div>
                     <h3 class="project-title" style="margin-top:12px">resuumi AI</h3>
                     <p class="project-subtitle">Automated Resume Keyword Optimization</p>
                 </div>
-                <button class="project-toggle" aria-label="Expand project">+</button>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
             </div>
             <p class="project-preview">GPT-4 powered tool that ingests a resume and job description, optimizes keyword matching, and outputs an improved, downloadable PDF.</p>
             <div class="project-expanded">
@@ -932,8 +932,7 @@
                         </div>
                         <div class="project-detail-section">
                             <h5>Status</h5>
-                            <p>MVP in production — August 2023</p>
-                            <a href="https://www.resuumi.com" target="_blank" class="project-link">Visit resuumi.com →</a>
+                            <p>MVP shipped August 2023</p>
                         </div>
                     </div>
                     <div class="project-gallery">
@@ -947,13 +946,13 @@
         <!-- Spellforge -->
         <div class="project-card anim" data-project="spellforge">
             <img class="project-thumb" src="Work%20Projects/Spellforge/Spellforge%20homepage.png" alt="Spellforge homepage screenshot" loading="lazy">
-            <div class="project-header" onclick="toggleProject(this)">
+            <div class="project-header">
                 <div>
                     <div class="project-tag">Production</div>
                     <h3 class="project-title" style="margin-top:12px">Spellforge</h3>
                     <p class="project-subtitle">LLM Quality Evaluation with Synthetic Users</p>
                 </div>
-                <button class="project-toggle" aria-label="Expand project">+</button>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
             </div>
             <p class="project-preview">Scalable quality evaluation platform for LLM apps using simulated synthetic users and AI judges.</p>
             <div class="project-expanded">
@@ -978,8 +977,7 @@
                         </div>
                         <div class="project-detail-section">
                             <h5>Status</h5>
-                            <p>MVP in production — October 2023</p>
-                            <a href="https://www.spellforge.ai" target="_blank" class="project-link">Visit spellforge.ai →</a>
+                            <p>MVP shipped October 2023</p>
                         </div>
                     </div>
                     <div class="project-gallery">
@@ -993,13 +991,13 @@
         <!-- DoppelFlow -->
         <div class="project-card anim" data-project="doppelflow">
             <img class="project-thumb" src="Work%20Projects/DoppelFlow/DoppelFlow%20Homepage%20mockup.png" alt="DoppelFlow homepage mockup" loading="lazy">
-            <div class="project-header" onclick="toggleProject(this)">
+            <div class="project-header">
                 <div>
                     <div class="project-tag">Hackathon · 3rd Place</div>
                     <h3 class="project-title" style="margin-top:12px">DoppelFlow</h3>
                     <p class="project-subtitle">AI Agents for Desktop & Browser Automation</p>
                 </div>
-                <button class="project-toggle" aria-label="Expand project">+</button>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
             </div>
             <p class="project-preview">A repeat-after-me training system for AI agents. Record your task, AI parses the video & DOM input, then replay your Doppel on demand.</p>
             <div class="project-expanded">
@@ -1038,13 +1036,13 @@
         <!-- Cyber Fort -->
         <div class="project-card anim" data-project="cyberfort">
             <img class="project-thumb" src="Work%20Projects/CyberFort/Cyberfort%20(full).png" alt="Cyber Fort homepage screenshot" loading="lazy">
-            <div class="project-header" onclick="toggleProject(this)">
+            <div class="project-header">
                 <div>
                     <div class="project-tag">Hackathon</div>
                     <h3 class="project-title" style="margin-top:12px">Cyber Fort</h3>
                     <p class="project-subtitle">AI-Simulated Cyber Attacks for LLM Security</p>
                 </div>
-                <button class="project-toggle" aria-label="Expand project">+</button>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
             </div>
             <p class="project-preview">Leverages synthetic user knowledge to simulate attack vectors and build a self-improving firewall for AI companies.</p>
             <div class="project-expanded">
@@ -1081,13 +1079,13 @@
         <!-- Connexpert -->
         <div class="project-card anim" data-project="connexpert">
             <img class="project-thumb" src="Work%20Projects/Connexpert/Connexpert%20Homepage%20(full).png" alt="Connexpert homepage screenshot" loading="lazy">
-            <div class="project-header" onclick="toggleProject(this)">
+            <div class="project-header">
                 <div>
                     <div class="project-tag">Production</div>
                     <h3 class="project-title" style="margin-top:12px">Connexpert</h3>
                     <p class="project-subtitle">Digital Marketplace for Expert Interviews</p>
                 </div>
-                <button class="project-toggle" aria-label="Expand project">+</button>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
             </div>
             <p class="project-preview">A two-sided marketplace connecting subject matter experts with researchers and consultants for paid interviews.</p>
             <div class="project-expanded">
@@ -1128,13 +1126,13 @@
         <!-- OLEO -->
         <div class="project-card anim" data-project="oleo">
             <img class="project-thumb" src="Work%20Projects/OLEO/OLEO%20homepage%20(full).png" alt="OLEO homepage screenshot" loading="lazy">
-            <div class="project-header" onclick="toggleProject(this)">
+            <div class="project-header">
                 <div>
                     <div class="project-tag">Venture-Backed</div>
                     <h3 class="project-title" style="margin-top:12px">OLEO</h3>
                     <p class="project-subtitle">Dietary Supplement eCommerce Brand</p>
                 </div>
-                <button class="project-toggle" aria-label="Expand project">+</button>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
             </div>
             <p class="project-preview">Co-founded a DTC supplement brand. Raised $2.5M in funding and grew revenue to nearly $1M annually.</p>
             <div class="project-expanded">
@@ -1218,24 +1216,47 @@
     document.querySelectorAll('.anim').forEach(el => observer.observe(el));
 
     // Project expand/collapse
-    function toggleProject(header) {
-        const card = header.closest('.project-card');
+    function setProjectExpanded(card, expanded) {
+        card.classList.toggle('expanded', expanded);
+        const btn = card.querySelector('.project-toggle');
+        if (btn) {
+            btn.setAttribute('aria-expanded', String(expanded));
+            btn.setAttribute('aria-label', expanded ? 'Collapse project' : 'Expand project');
+        }
+    }
+
+    function toggleProject(card) {
         const wasExpanded = card.classList.contains('expanded');
-        
-        // Close all other cards
         document.querySelectorAll('.project-card.expanded').forEach(c => {
-            if (c !== card) c.classList.remove('expanded');
+            if (c !== card) setProjectExpanded(c, false);
         });
-        
-        card.classList.toggle('expanded');
-        
-        // Smooth scroll to card if expanding
+        setProjectExpanded(card, !wasExpanded);
         if (!wasExpanded) {
             setTimeout(() => {
                 card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 100);
         }
     }
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        const btn = card.querySelector('.project-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+
+        card.addEventListener('click', (e) => {
+            // Don't toggle when clicking inside the expanded panel or on any link
+            if (e.target.closest('.project-expanded')) return;
+            if (e.target.closest('a')) return;
+            toggleProject(card);
+        });
+
+        card.addEventListener('keydown', (e) => {
+            if (e.target.closest('.project-expanded')) return;
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleProject(card);
+            }
+        });
+    });
 </script>
 
 </body>
