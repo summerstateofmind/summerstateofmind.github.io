@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyler Bissell — AI Product Manager</title>
+    <meta name="description" content="Skyler Bissell is an AI-forward Product Manager based in Seattle, building intelligent products with generative AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0b;
+            --bg-card: #131316;
+            --bg-card-hover: #1a1a1f;
+            --bg-expanded: #16161b;
+            --text-primary: #f0efe9;
+            --text-secondary: #8a8a8f;
+            --text-muted: #5a5a5f;
+            --accent: #c8ff00;
+            --accent-dim: rgba(200, 255, 0, 0.08);
+            --accent-mid: rgba(200, 255, 0, 0.15);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --max-width: 1100px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.7);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .nav-logo {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.3px;
+            transition: color var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            color: var(--bg) !important;
+            background: var(--accent);
+            padding: 8px 20px;
+            border-radius: 100px;
+            transition: transform var(--transition), opacity var(--transition);
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 140px 40px 80px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s 0.2s forwards;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 7vw, 88px);
+            line-height: 1.05;
+            font-weight: 400;
+            margin-bottom: 28px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s 0.4s forwards;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(17px, 2vw, 20px);
+            color: var(--text-secondary);
+            max-width: 540px;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 48px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s 0.6s forwards;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s 0.8s forwards;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .hero-meta-item .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        .hero-clock {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeUp 0.8s 1.2s forwards;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--text-muted), transparent);
+            animation: scrollPulse 2s infinite;
+        }
+
+        /* ---- SECTIONS ---- */
+        section {
+            padding: 100px 40px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 56px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ---- EXPERIENCE ---- */
+        .experience-grid {
+            display: grid;
+            gap: 0;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: baseline;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .experience-item.visible {
+            animation: fadeUp 0.6s forwards;
+        }
+
+        .exp-role {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .exp-company {
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .exp-date {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        /* ---- STATS ---- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: border-color var(--transition), background var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+        }
+
+        .stat-card.visible {
+            animation: fadeUp 0.6s forwards;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 52px;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* Awards */
+        .awards-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .award-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: border-color var(--transition);
+        }
+
+        .award-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .award-card.visible {
+            animation: fadeUp 0.6s forwards;
+        }
+
+        .award-icon {
+            font-size: 28px;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-dim);
+            border-radius: var(--radius-sm);
+            flex-shrink: 0;
+        }
+
+        .award-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .award-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ---- PROJECTS ---- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .project-card.visible {
+            animation: fadeUp 0.6s forwards;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+        }
+
+        .project-card.expanded {
+            grid-column: 1 / -1;
+            transform: none;
+        }
+
+        .project-card.expanded:hover {
+            transform: none;
+        }
+
+        .project-thumb {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-gallery img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: border-color var(--transition), transform var(--transition);
+        }
+
+        .project-gallery img:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            padding: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .project-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-dim);
+            padding: 5px 12px;
+            border-radius: 100px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .project-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .project-toggle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .project-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .project-card.expanded .project-toggle {
+            transform: rotate(45deg);
+        }
+
+        .project-preview {
+            padding: 0 28px 24px;
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .project-expanded {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card.expanded .project-expanded {
+            max-height: 1400px;
+        }
+
+        .project-expanded-inner {
+            padding: 0 28px 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            padding-top: 24px;
+        }
+
+        .project-detail-section h5 {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .project-detail-section p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .tech-tag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: rgba(255,255,255,0.04);
+            padding: 5px 14px;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--accent);
+            margin-top: 16px;
+            transition: gap var(--transition);
+        }
+
+        .project-link:hover {
+            gap: 10px;
+        }
+
+        /* ---- CTA ---- */
+        .cta-section {
+            text-align: center;
+            padding: 120px 40px;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--bg);
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 40px rgba(200, 255, 0, 0.2);
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ---- ANIMATIONS ---- */
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links .hide-mobile {
+                display: none;
+            }
+
+            .hero, section, .cta-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 60px;
+                min-height: auto;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-row {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card.expanded {
+                grid-column: auto;
+            }
+
+            .project-card.expanded .project-expanded {
+                max-height: 3000px;
+            }
+
+            .project-thumb {
+                height: 180px;
+            }
+
+            .hero-scroll {
+                display: none;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+                padding: 32px 20px;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .stat-number {
+                font-size: 40px;
+            }
+        }
+
+        /* Grain overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1000;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-logo">SB</a>
+    <ul class="nav-links">
+        <li><a href="#experience" class="hide-mobile">Experience</a></li>
+        <li><a href="#projects" class="hide-mobile">Projects</a></li>
+        <li><a href="https://calendly.com/skylerbissell/30min" target="_blank" class="nav-cta">Let's Talk</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-eyebrow">AI Product Manager</div>
+    <h1>Hi, I'm Skyler<br>Bissell<em>.</em></h1>
+    <p class="hero-subtitle">
+        I build intelligent products with generative AI — from concept through launch. 
+        8 years shipping SaaS, iOS, and eCommerce. 3 years deep in AI.
+    </p>
+    <div class="hero-meta">
+        <div class="hero-meta-item">
+            <span class="dot"></span>
+            <span>Seattle, Washington</span>
+        </div>
+        <div class="hero-meta-item">
+            <span class="hero-clock" id="clock"></span>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="section-label">Experience</div>
+    <div class="experience-grid">
+        <div class="experience-item anim">
+            <div>
+                <span class="exp-role">Technical Program Manager</span>
+                <span class="exp-company"> — Amazon</span>
+            </div>
+            <span class="exp-date">Dec 2025 — Present</span>
+        </div>
+        <div class="experience-item anim">
+            <div>
+                <span class="exp-role">Product Manager</span>
+                <span class="exp-company"> — Amazon (Contract)</span>
+            </div>
+            <span class="exp-date">Oct 2024 — Dec 2025</span>
+        </div>
+        <div class="experience-item anim">
+            <div>
+                <span class="exp-role">Senior Consultant</span>
+                <span class="exp-company"> — Spur Reply (Microsoft)</span>
+            </div>
+            <span class="exp-date">Jan 2024 — Oct 2024</span>
+        </div>
+        <div class="experience-item anim">
+            <div>
+                <span class="exp-role">Head of Product</span>
+                <span class="exp-company"> — Connexpert</span>
+            </div>
+            <span class="exp-date">Jul 2021 — Jun 2023</span>
+        </div>
+        <div class="experience-item anim">
+            <div>
+                <span class="exp-role">Co-Founder</span>
+                <span class="exp-company"> — OLEO</span>
+            </div>
+            <span class="exp-date">2016 — 2020</span>
+        </div>
+    </div>
+</section>
+
+<!-- STATS & AWARDS -->
+<section id="stats">
+    <div class="section-label">By the Numbers</div>
+    <div class="stats-grid">
+        <div class="stat-card anim">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Years building SaaS, iOS,<br>and eCommerce products</div>
+        </div>
+        <div class="stat-card anim">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Years of hands-on AI<br>product experience</div>
+        </div>
+        <div class="stat-card anim">
+            <div class="stat-number">6</div>
+            <div class="stat-label">AI-based projects built<br>with developer teams</div>
+        </div>
+    </div>
+    <div class="awards-row">
+        <div class="award-card anim">
+            <div class="award-icon">🥇</div>
+            <div class="award-info">
+                <h4>1st Place — AI Hackathon</h4>
+                <div class="award-meta">ScamDetect · June 2023</div>
+            </div>
+        </div>
+        <div class="award-card anim">
+            <div class="award-card anim">
+                <div class="award-icon">🥉</div>
+                <div class="award-info">
+                    <h4>3rd Place — AI Hackathon</h4>
+                    <div class="award-meta">DoppelFlow · December 2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="section-label">Selected Projects</div>
+    <div class="projects-grid" id="projectsGrid">
+
+        <!-- resuumi -->
+        <div class="project-card anim" data-project="resuumi">
+            <img class="project-thumb" src="Work%20Projects/resuumi/resuumi%20homepage.png" alt="resuumi homepage screenshot" loading="lazy">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div>
+                    <div class="project-tag">Production</div>
+                    <h3 class="project-title" style="margin-top:12px">resuumi AI</h3>
+                    <p class="project-subtitle">Automated Resume Keyword Optimization</p>
+                </div>
+                <button class="project-toggle" aria-label="Expand project">+</button>
+            </div>
+            <p class="project-preview">GPT-4 powered tool that ingests a resume and job description, optimizes keyword matching, and outputs an improved, downloadable PDF.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>The Problem</h5>
+                            <p>Job seekers waste hours manually tailoring resumes for each application, often missing critical keywords that ATS systems filter on. Most don't know which terms matter.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>My Role & Approach</h5>
+                            <p>Designed the product end-to-end and built the UI in Panel (Python). Integrated GPT-4 for semantic keyword analysis and resume rewriting. Shipped to production as a self-serve web app.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Tech Stack</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">GPT-4</span>
+                                <span class="tech-tag">Panel</span>
+                                <span class="tech-tag">PDF Generation</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Status</h5>
+                            <p>MVP in production — August 2023</p>
+                            <a href="https://www.resuumi.com" target="_blank" class="project-link">Visit resuumi.com →</a>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/resuumi/resuumi%20homepage%20(narrow).png" alt="resuumi narrow viewport" loading="lazy">
+                        <img src="Work%20Projects/resuumi/test%201.png" alt="resuumi screenshot" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spellforge -->
+        <div class="project-card anim" data-project="spellforge">
+            <img class="project-thumb" src="Work%20Projects/Spellforge/Spellforge%20homepage.png" alt="Spellforge homepage screenshot" loading="lazy">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div>
+                    <div class="project-tag">Production</div>
+                    <h3 class="project-title" style="margin-top:12px">Spellforge</h3>
+                    <p class="project-subtitle">LLM Quality Evaluation with Synthetic Users</p>
+                </div>
+                <button class="project-toggle" aria-label="Expand project">+</button>
+            </div>
+            <p class="project-preview">Scalable quality evaluation platform for LLM apps using simulated synthetic users and AI judges.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>The Problem</h5>
+                            <p>LLM-powered apps are difficult to test at scale. Manual QA is slow and subjective. Teams need automated, repeatable evaluation that simulates real user behavior.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>My Role & Approach</h5>
+                            <p>Conceived and built the platform. Designed the synthetic user simulation framework and integrated AI judge evaluation. Built the Streamlit interface for team workflows.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Tech Stack</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Streamlit</span>
+                                <span class="tech-tag">GPT-4</span>
+                                <span class="tech-tag">GPT-3.5</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Status</h5>
+                            <p>MVP in production — October 2023</p>
+                            <a href="https://www.spellforge.ai" target="_blank" class="project-link">Visit spellforge.ai →</a>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/Spellforge/Spellforge%20homepage%20(tablet).png" alt="Spellforge tablet view" loading="lazy">
+                        <img src="Work%20Projects/Spellforge/Spellforge%20homepage%20(phone).png" alt="Spellforge phone view" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DoppelFlow -->
+        <div class="project-card anim" data-project="doppelflow">
+            <img class="project-thumb" src="Work%20Projects/DoppelFlow/DoppelFlow%20Homepage%20mockup.png" alt="DoppelFlow homepage mockup" loading="lazy">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div>
+                    <div class="project-tag">Hackathon · 3rd Place</div>
+                    <h3 class="project-title" style="margin-top:12px">DoppelFlow</h3>
+                    <p class="project-subtitle">AI Agents for Desktop & Browser Automation</p>
+                </div>
+                <button class="project-toggle" aria-label="Expand project">+</button>
+            </div>
+            <p class="project-preview">A repeat-after-me training system for AI agents. Record your task, AI parses the video & DOM input, then replay your Doppel on demand.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>The Problem</h5>
+                            <p>Automating repetitive desktop and browser tasks typically requires programming knowledge. Non-technical users need a way to teach AI by demonstration, not code.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>My Role & Approach</h5>
+                            <p>Served as PM on a three-person team. Defined the product vision, designed the user flow, and coordinated between two developers during a hackathon sprint.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Tech Stack</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">GPT-4V</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">DOM Parsing</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Result</h5>
+                            <p>Won 3rd place at AI Hackathon — December 2023. Demonstrated the viability of demonstration-based agent training.</p>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/DoppelFlow/DoppelFlow%20Homepage%20mockup%202.png" alt="DoppelFlow mockup variant" loading="lazy">
+                        <img src="Work%20Projects/DoppelFlow/DoppelFlow%20Homepage%20(phone).png" alt="DoppelFlow phone view" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cyber Fort -->
+        <div class="project-card anim" data-project="cyberfort">
+            <img class="project-thumb" src="Work%20Projects/CyberFort/Cyberfort%20(full).png" alt="Cyber Fort homepage screenshot" loading="lazy">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div>
+                    <div class="project-tag">Hackathon</div>
+                    <h3 class="project-title" style="margin-top:12px">Cyber Fort</h3>
+                    <p class="project-subtitle">AI-Simulated Cyber Attacks for LLM Security</p>
+                </div>
+                <button class="project-toggle" aria-label="Expand project">+</button>
+            </div>
+            <p class="project-preview">Leverages synthetic user knowledge to simulate attack vectors and build a self-improving firewall for AI companies.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>The Problem</h5>
+                            <p>LLM applications are vulnerable to prompt injection, jailbreaking, and data extraction attacks. Static security rules can't keep pace with evolving threats.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>My Role & Approach</h5>
+                            <p>Applied learnings from Spellforge's synthetic user framework to simulate adversarial attack patterns. Designed a self-improving defense loop that adapts to new attack vectors.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Tech Stack</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">GPT-4</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Red Teaming</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Status</h5>
+                            <p>Hackathon project — January 2024</p>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/CyberFort/Cyberfort%20(phone).png" alt="Cyber Fort phone view" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connexpert -->
+        <div class="project-card anim" data-project="connexpert">
+            <img class="project-thumb" src="Work%20Projects/Connexpert/Connexpert%20Homepage%20(full).png" alt="Connexpert homepage screenshot" loading="lazy">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div>
+                    <div class="project-tag">Production</div>
+                    <h3 class="project-title" style="margin-top:12px">Connexpert</h3>
+                    <p class="project-subtitle">Digital Marketplace for Expert Interviews</p>
+                </div>
+                <button class="project-toggle" aria-label="Expand project">+</button>
+            </div>
+            <p class="project-preview">A two-sided marketplace connecting subject matter experts with researchers and consultants for paid interviews.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>The Problem</h5>
+                            <p>Researchers spend excessive time sourcing and vetting domain experts. Experts lack efficient platforms to monetize their knowledge for short consultations.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>My Role & Approach</h5>
+                            <p>Hired as Head of Product (CEO-level). Led market research, defined the MVP, managed the build with developers, and executed go-to-market strategy.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Tech Stack</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Web Platform</span>
+                                <span class="tech-tag">Marketplace</span>
+                                <span class="tech-tag">Payments</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Status</h5>
+                            <p>Production — October 2022</p>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/Connexpert/Connexpert%20Homepage%20(phone).png" alt="Connexpert phone view" loading="lazy">
+                        <img src="Work%20Projects/Connexpert/Website%208.16.23%201.png" alt="Connexpert site screenshot 1" loading="lazy">
+                        <img src="Work%20Projects/Connexpert/Website%208.16.23%202.png" alt="Connexpert site screenshot 2" loading="lazy">
+                        <img src="Work%20Projects/Connexpert/Website%208.16.23%203.png" alt="Connexpert site screenshot 3" loading="lazy">
+                        <img src="Work%20Projects/Connexpert/Website%208.16.23%204.png" alt="Connexpert site screenshot 4" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OLEO -->
+        <div class="project-card anim" data-project="oleo">
+            <img class="project-thumb" src="Work%20Projects/OLEO/OLEO%20homepage%20(full).png" alt="OLEO homepage screenshot" loading="lazy">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div>
+                    <div class="project-tag">Venture-Backed</div>
+                    <h3 class="project-title" style="margin-top:12px">OLEO</h3>
+                    <p class="project-subtitle">Dietary Supplement eCommerce Brand</p>
+                </div>
+                <button class="project-toggle" aria-label="Expand project">+</button>
+            </div>
+            <p class="project-preview">Co-founded a DTC supplement brand. Raised $2.5M in funding and grew revenue to nearly $1M annually.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>The Story</h5>
+                            <p>Co-founded in 2016 and built from the ground up — product development, branding, supply chain, and a custom-built eCommerce store. Raised a seed round and scaled operations.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>My Role</h5>
+                            <p>Co-Founder. Oversaw product development, eCommerce operations, fundraising, and brand strategy. Managed the full lifecycle from concept to ~$1M ARR.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Key Metrics</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">$2.5M Raised</span>
+                                <span class="tech-tag">~$1M ARR</span>
+                                <span class="tech-tag">Custom eComm</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Status</h5>
+                            <p>Series Seed — Founded 2016</p>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/OLEO/OLEO%20homepage%20(mobile).png" alt="OLEO mobile view" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+    <h2>I love building things<em style="font-family:var(--font-display);color:var(--accent)">.</em></h2>
+    <p>Looking for an earnest, AI-forward product manager? Let's talk about what we can build together.</p>
+    <a href="https://calendly.com/skylerbissell/30min" target="_blank" class="cta-button">
+        Schedule a Call
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-left">© 2025 Skyler Bissell</div>
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/skylerbissell/" target="_blank">LinkedIn</a>
+        <a href="https://calendly.com/skylerbissell/30min" target="_blank">Calendly</a>
+        <a href="mailto:skyler@skylerbissell.com">Email</a>
+    </div>
+</footer>
+
+<script>
+    // Clock
+    function updateClock() {
+        const now = new Date();
+        const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'America/Los_Angeles' };
+        document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', options) + ' PST';
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                const delay = Array.from(entry.target.parentElement.children)
+                    .filter(c => c.classList.contains('anim'))
+                    .indexOf(entry.target) * 100;
+                entry.target.style.animationDelay = `${delay}ms`;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+    // Project expand/collapse
+    function toggleProject(header) {
+        const card = header.closest('.project-card');
+        const wasExpanded = card.classList.contains('expanded');
+        
+        // Close all other cards
+        document.querySelectorAll('.project-card.expanded').forEach(c => {
+            if (c !== card) c.classList.remove('expanded');
+        });
+        
+        card.classList.toggle('expanded');
+        
+        // Smooth scroll to card if expanding
+        if (!wasExpanded) {
+            setTimeout(() => {
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+    }
+</script>
+
+</body>
+</html>
