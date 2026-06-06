@@ -872,8 +872,8 @@
             <div class="stat-label">Years of hands-on AI<br>product experience</div>
         </div>
         <div class="stat-card anim">
-            <div class="stat-number">6</div>
-            <div class="stat-label">AI-based projects built<br>with developer teams</div>
+            <div class="stat-number">8</div>
+            <div class="stat-label">AI products built<br>and shipped</div>
         </div>
     </div>
     <div class="awards-row">
@@ -898,6 +898,114 @@
 <section id="projects">
     <div class="section-label">Selected Projects</div>
     <div class="projects-grid" id="projectsGrid">
+
+        <!-- FlaggedLeads -->
+        <div class="project-card anim" data-project="flaggedleads">
+            <img class="project-thumb" src="Work%20Projects/FlaggedLeads/flaggedleads-map.png" alt="FlaggedLeads map dashboard screenshot" loading="lazy">
+            <div class="project-header">
+                <div>
+                    <div class="project-tag">Live · SaaS</div>
+                    <h3 class="project-title" style="margin-top:12px">FlaggedLeads</h3>
+                    <p class="project-subtitle">Distress-Signal Lead Engine for Real Estate</p>
+                </div>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
+            </div>
+            <p class="project-preview">Pulls Seattle's code-violation records, maps every flagged property, and scores each one by distress signal — so investors spot motivated sellers before the listings ever appear.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>What It Does</h5>
+                            <p>A code violation is a quiet tell that an owner is checked out. FlaggedLeads reads those public records, ties each one back to its owner, and ranks the property by how likely that owner is to sell. Investors get the lead before anyone else knows it exists.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>What I Built</h5>
+                            <p>Built solo, end to end. An ingestion pipeline cleans messy municipal records and matches each violation to the right parcel; a scoring engine turns volume, severity, and recency into one sortable number and shows its work. An early-warning layer reads 311 calls and permit filings to flag a property before the violation even lands — and owner enrichment catches absentee landlords, PO-box forwarding, and multi-address portfolios.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Tech Stack</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Leaflet.js</span>
+                                <span class="tech-tag">Socrata API</span>
+                                <span class="tech-tag">Geocoding</span>
+                                <span class="tech-tag">Scoring Engine</span>
+                                <span class="tech-tag">Railway</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Live Now</h5>
+                            <p>12,000+ active violations across 9,500+ Seattle properties, refreshed continuously. Free map to browse; a paid tier unlocks scores, owner data, and CSV export.</p>
+                        </div>
+                    </div>
+                    <a href="https://flaggedleads.com" target="_blank" rel="noopener" class="project-link">
+                        Visit flaggedleads.com
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/FlaggedLeads/flaggedleads-deal-score.png" alt="FlaggedLeads deal score and signal breakdown panel" loading="lazy">
+                        <img src="Work%20Projects/FlaggedLeads/flaggedleads-early-signal.png" alt="FlaggedLeads early-signal emerging-leads view" loading="lazy">
+                        <img src="Work%20Projects/FlaggedLeads/flaggedleads-landing.png" alt="FlaggedLeads landing page" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cityparity -->
+        <div class="project-card anim" data-project="cityparity">
+            <img class="project-thumb" src="Work%20Projects/cityparity/cityparity-hero.png" alt="cityparity calculator homepage screenshot" loading="lazy">
+            <div class="project-header">
+                <div>
+                    <div class="project-tag">Live Product</div>
+                    <h3 class="project-title" style="margin-top:12px">cityparity</h3>
+                    <p class="project-subtitle">Relocation Economics Calculator + MCP Server</p>
+                </div>
+                <button class="project-toggle" type="button" aria-label="Expand project" aria-expanded="false">+</button>
+            </div>
+            <p class="project-preview">Compares the true cost of a move across 165 cities — not just rent and salary, but childcare, healthcare, vacation, and parental leave — and exposes the same engine to AI agents over MCP.</p>
+            <div class="project-expanded">
+                <div class="project-expanded-inner">
+                    <div class="project-detail-grid">
+                        <div class="project-detail-section">
+                            <h5>What It Does</h5>
+                            <p>Most calculators stop at salary and rent. cityparity also prices the social safety net, turning subsidized childcare or universal healthcare into an equivalent salary. The result: "the lower-paying city actually pays more" becomes a number you can show your partner, not a hunch.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>What I Built</h5>
+                            <p>The financial engine is pure JavaScript — it models progressive tax across 69 countries and runs the same code in the browser and the test suite. Your salary never leaves your device; every calculation is client-side. I also shipped a public MCP server so AI assistants can run the comparisons themselves, plus a programmatic-SEO system that generates a ranked page for every city pair.</p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Tech Stack</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Alpine.js</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Model Context Protocol</span>
+                                <span class="tech-tag">Cloudflare Workers</span>
+                                <span class="tech-tag">Programmatic SEO</span>
+                                <span class="tech-tag">Playwright</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-section">
+                            <h5>Live Now</h5>
+                            <p>165 cities across 69 countries. No account and no tracking — your numbers never leave your browser. AI agents can connect at mcp.cityparity.com.</p>
+                        </div>
+                    </div>
+                    <a href="https://cityparity.com" target="_blank" rel="noopener" class="project-link">
+                        Visit cityparity.com
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <div class="project-gallery">
+                        <img src="Work%20Projects/cityparity/cityparity-score.png" alt="cityparity score comparison view" loading="lazy">
+                        <img src="Work%20Projects/cityparity/cityparity-breakdown.png" alt="cityparity line-item cost breakdown" loading="lazy">
+                        <img src="Work%20Projects/cityparity/cityparity-mcp.png" alt="cityparity MCP server documentation page" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- resuumi -->
         <div class="project-card anim" data-project="resuumi">
